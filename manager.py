@@ -1,106 +1,139 @@
+# you'll have to open the python file to set the masterpass here becuase im currently trying to figure out how am i supossed to save it and stuff
 
-#You'll have to open this file and set the Master pass where 'Placeholder' is written because im currently trying to figure out how to save the master password as a file
-print("Are you using this for the first time")
 
-Y = "Y"
-n = "N"
-var1 = "T"
-Expand
-manager.py
-4 KB
-﻿
-#You'll have to open this file and set the Master pass where 'Placeholder' is written because im currently trying to figure out how to save the master password as a file
-print("Are you using this for the first time")
+masterpass = "placeholer"
 
-Y = "Y"
-n = "N"
-var1 = "T"
-var2 = "I"
-var3 = "R"
-var4 = "G"
+G = "G"
+S = 'S'
+V = 'V'
+Y = 'Y'
+N = "N"
+E = 'E'
+G1 = "G"
 
-user = input('(' + Y + ')es ' +  ' (' + n + ')o ' )
+print("Welcome to password manager by zuxarido :)")
 
-if user == n:
-  Masterpass = "Placeholder"
-  if Masterpass == input("Please enter master password "):
-    print("Logging in")
-  
-    print("Which password would you like to access")
-    passwordtype = input('(' + var1 + ')witter ' + ' (' + var2 + ')nstagram ' + ' (' + var3 + ')eddit ' + ' (' + var4 + ')ithub ')
-    if passwordtype == var1:
-        file = open("Twittermail.txt", 'r') 
-        datat1 = file.read()
-        print("The mail id is " + datat1)
-        file.close()
-        file = open("Twitterpass.txt", 'r')
-        datat2 = file.read()
-        print("The password is " + datat2)
-        file.close()
-            
-    elif passwordtype == var2:
-           file = open("Instamail.txt", 'r')
-           datai1 = file.read()
-           print("The mail id is " + datai1)
-           file.close()
-           file = open("Instapass.txt", 'r')
-           datai2 = file.read()
-           print("The password is " + datai2)
-           file.close()
 
-    elif passwordtype == var3:
-           file = open("Redditmail.txt", 'r')
-           datar1 = file.read()
-           print("The mail id is " + datar1)
-           file.close()
-           file = open("Redditpass.txt", 'r')
-           datar2 = file.read()
-           print("The password is " + datar2)
-           file.close()
-    
-    elif passwordtype == var4 :
-           file = open("Gitmail.txt", 'r')
-           datag1 = file.read()
-           print("The mail id is " + datag1)
-           file.close()
-           file = open("Gitpass.txt", 'r')
-           datag2 = file.read()
-           print("The Password is " + datag2)
-           file.close()
+
+print("What would you like to do ?")
+task1 = input(
+    '(' + G + ')enerate a random password ' + ' (' + S + ')ave a new password ' + ' (' + V + ')iew saved passwords ')
+
+if task1 == G:
+    import random
+
+    Capital_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    Small_letters = "abcdefghijklmnopqrstuvwxyz"
+    numbers = "1234567890"
+    punctuation = ",.?!"
+    special_characters = "!@#$%&*()`~"
+    length = int(input("Enter the length for password  "))
+    password = ""
+
+    for i in range(length + 1):
+        password += random.choice(Capital_letters + Small_letters + numbers + punctuation + special_characters)
+    print(password)
+    print("Your password has been saved :)")
+    procedure = input("(" + G1 + ')o back to the main menu ' + "(" + E + ')exit ')
+    if procedure == E:
+        print("Thank you for using password manager by zuxarido :) ")
+
+    elif procedure == G1:
+        print("still figuring this out")
+
     else:
-           input("Invalid entry, Please try again " + " [Enter the letters present in the brackets]")
-  else:
-      print("Passwords do not match, please try again")
+        print("invalid entry, try again")
 
+elif task1 == S:
+    site = input("What would you like to associate this password with ? ")
+    lid = input("Please enter login/mail id associated with " + site)
+    file = open(site + "mail.txt", 'w')
+    file.write(lid)
+    file.close
+    print("Would you like to generate a random password for this account? ")
+    randpassword = input('(' + Y + ')es ' + ' (' + N + ')o ')
+    if randpassword == Y:
+        import random
 
-elif user == Y:
-    print("Welcome to pypass manager by zuxarido :) ")
-    print("Which password would you like to save")
-    passtype = (input('(' + var1 + ')witter ' + ' (' + var2 + ')nstagram ' + ' (' + var3 + ')eddit ' + ' (' + var4 + ')ithub '))    
-    
-    if passtype == var1:       
-        print("Do you want to generate a random password")
-        randpassword = input('(' + Y + ')es ' + ' (' + n + ')o')
-        if randpassword == Y:
-            import random
-            Capital_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            Small_letters = "abcdefghijklmnopqrstuvwxyz"
-            numbers = "1234567890"
-            punctuation = ",.?!"
-            special_characters = "!@#$%&*()`~"
-            length = int(input("Enter the length for password  "))
-            password = ""
+        Capital_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        Small_letters = "abcdefghijklmnopqrstuvwxyz"
+        numbers = "1234567890"
+        punctuation = ",.?!"
+        special_characters = "!@#$%&*()`~"
+        length = int(input("Enter the length for password  "))
+        password = ""
 
-            for i in range(length+1):
-                   password += random.choice(Capital_letters + Small_letters + numbers + punctuation + special_characters)
-            print(password + "Please copy it and then enter it next")
-            file = open("Twittermail.txt", 'w')
-            passrand = input("Please enter the randomly generated password")
-            file.write(passrand)
+        for i in range(length + 1):
+            password += random.choice(Capital_letters + Small_letters + numbers + punctuation + special_characters)
+        print(password + "  This is the randomly generated password ")
+        print("Would you like to use this password ")
+        randpassworduse = input('(' + Y + ')es ' + ' (' + N + ')o ')
+
+        if randpassworduse == Y:
+            file = open(site + "pass.txt", 'w')
+            file.write(password)
             file.close()
+            print("Your password has been saved :) ")
 
-        elif randpassword == n:
-            file = open("Twittermail.txt", 'w')
-            passrand = input("Please enter a password")
-            file.write(passrand)
+        elif randpassworduse == N:
+            pass1 = input("please enter the password you'd like to associate with this account ")
+            file = open(site + "pass.txt", 'w')
+            file.write(pass1)
             file.close()
+            print("Your password has been saved :)")
+            procedure = input("(" + G1 + ')o back to the main menu ' + "(" + E + ')exit ')
+            if procedure == E:
+                print("Thank you for using password manager by zuxarido :) ")
+
+            elif procedure == G1:
+                print("still figuring this out")
+
+            else:
+                print("invalid entry, try again")
+
+    elif randpassword == N:
+        pass1 = input("Please enter the password you'd like to associate with this account ")
+        file = open(site + "pass.txt", 'w')
+        file.write(pass1)
+        file.close()
+        print("Your password has been saved :)")
+        print("What would you like to do now ?")
+        procedure = input("(" + G1 + ')o back to the main menu ' + "(" + E + ')exit ')
+        if procedure == E:
+            print("Thank you for using password manager by zuxarido :) ")
+
+        elif procedure == G1:
+            print("still figuring this out")
+
+        else:
+            print("invalid entry , try again")
+
+elif task1 == V:
+    passid = input("Please enter the platform whose credential you'd like to access")
+    file = open(passid + "mail.txt", 'r')
+    mailid = file.read()
+    print("The login id associated with " + passid + " is " + mailid)
+    file.close()
+    file = open(passid + "pass.txt", 'r')
+    pass2 = file.read()
+    print("The password for " + passid + " is " + pass2)
+    print("What would you like to do now ?")
+    procedure = input("(" + G1 + ')o back to the main menu ' + "(" + E + ')exit ')
+    if procedure == E:
+        print("Thank you for using password manager by zuxarido :) ")
+
+    elif procedure == G1:
+        print("still figuring this out")
+
+    else:
+        print("invalid entry , try again")
+
+
+else:
+    print("invalid entry, try again")
+
+
+
+
+
+
