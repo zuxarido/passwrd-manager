@@ -3,5 +3,5 @@ I've tried to create a password manager + random password generator here, this p
  future plans include
  1) Adding some sort of encryption method to the txt files
  2) developing a gui
- 3) making it into an exe 
+ 3) making it into an exe (with gui) 
  4) will try to implement cloud support
