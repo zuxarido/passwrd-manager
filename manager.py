@@ -12,9 +12,6 @@ E = 'E'
 G1 = "G"
 
 print("Welcome to password manager by zuxarido :)")
-
-
-
 print("What would you like to do ?")
 task1 = input(
     '(' + G + ')enerate a random password ' + ' (' + S + ')ave a new password ' + ' (' + V + ')iew saved passwords ')
@@ -33,16 +30,6 @@ if task1 == G:
     for i in range(length + 1):
         password += random.choice(Capital_letters + Small_letters + numbers + punctuation + special_characters)
     print(password)
-    print("Your password has been saved :)")
-    procedure = input("(" + G1 + ')o back to the main menu ' + "(" + E + ')exit ')
-    if procedure == E:
-        print("Thank you for using password manager by zuxarido :) ")
-
-    elif procedure == G1:
-        print("still figuring this out")
-
-    else:
-        print("invalid entry, try again")
 
 elif task1 == S:
     site = input("What would you like to associate this password with ? ")
@@ -131,7 +118,6 @@ elif task1 == V:
 
 else:
     print("invalid entry, try again")
-
 
 
 
